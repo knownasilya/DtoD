@@ -1,0 +1,73 @@
+body {
+  background-color: #fff;
+  padding: 5px;
+  margin: 0; }
+
+body p ol ul td {
+  font-family: verdana, sans-serif;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #333; }
+
+a:visited {
+  color: #666; }
+
+a:hover {
+  color: #000;
+  text-decoration: underline; }
+
+#events {
+  margin-left: 20px; }
+  #events .name {
+    text-decoration: underline;
+    font-family: Verdana;
+    font-size: 12px; }
+  #events .etype {
+    font-family: Verdana;
+    font-size: 10px;
+    color: #13A7C1; }
+  #events .edate {
+    font-family: Verdana;
+    font-size: 10px;
+    color: #000; }
+  #events td {
+    padding-bottom: 1px;
+    border: 0; }
+
+h1 {
+  font-family: verdana;
+  font-size: 18px;
+  font-style: normal;
+  color: #55412D;
+  line-height: 16px;
+  margin-bottom: 4px; }
+
+.seperator_more {
+  height: 3px;
+  width: 310px;
+  background-color: #998D81; }
+
+.seperator_less {
+  height: 3px;
+  width: 240px;
+  background-color: #998D81; }
+
+.even {
+  background-color: #FBFBFB; }
+
+.odd {
+  background-color: #fff; }
+
+.map {
+  margin-top: 5px;
+  margin-left: 20px; }
+
+.date_select {
+  margin: 0;
+  padding: 0; }

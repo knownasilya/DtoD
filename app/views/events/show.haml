@@ -1,0 +1,27 @@
+%p
+  %b Name:
+  =h @event.name
+
+%p
+  %b Description:
+  =h @event.description
+
+
+%p
+  %b Location:
+  =h @event.location
+
+
+%p
+  %b Type:
+  =h @event.event_type
+
+
+%p
+  %b Date:
+  =h @event.event_date
+
+
+= link_to 'Edit', edit_event_path(@event)
+|
+= link_to 'Back', events_path

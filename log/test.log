@@ -1,0 +1,134 @@
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'x') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = '') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'okbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('0RG4pzsKWR', '2008-11-18 06:29:34', '106bb2015d7556a34990304ffe9f54609ac6d85c', 'okbob', 'okbob@mcbob.com', '2008-11-18 06:29:34')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email IS NULL AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'notavalidemail' AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'validbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "email" = 'validbob@mcbob.com', "updated_at" = '2008-11-18 06:29:34' WHERE "id" = 1000004[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'existingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email IS NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonexistingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonexistingbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('XgKKSA5dBO', '2008-11-18 06:29:34', '7e7ab5d2c2a7362681b1e937357dce0803abae4c', 'nonexistingbob', 'nonexistingbob@mcbob.com', '2008-11-18 06:29:34')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'newbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'newbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('fHSHx3CNWc', '2008-11-18 06:29:34', '0e89a33ae472a65e0bd2a7284bee3d63b40eaab1', 'newbob', 'newbob@mcbob.com', '2008-11-18 06:29:34')[0m
+  [4;35;1mUser Load (0.016000)[0m   [0mSELECT * FROM "users" WHERE (login = 'newbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('pamTImMeEb', '2008-11-18 06:29:34', '39c8da8c75fb366c694a5880430eab4e16ad8530', 'nonbob', 'nonbob@mcbob.com', '2008-11-18 06:29:34')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'longbob' AND "users".id <> 1000003) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'lbob@mcbob.com' AND "users".id <> 1000003) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE "users" SET "hashed_password" = '078cf6ae2de80ed6c004c8c8576a5572e077a52c', "updated_at" = '2008-11-18 06:29:34' WHERE "id" = 1000003[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'longbob' AND "users".id <> 1000003) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'lbob@mcbob.com' AND "users".id <> 1000003) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "hashed_password" = '00728d3362c26746ec25963f71be022b152237a9' WHERE "id" = 1000003[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'badbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('NrfyHRZSze', '2008-11-18 06:29:34', '3b3bf0bac5e797ebb7c9a5add76a20739a914de7', 'badbob', 'badbob@mcbob.com', '2008-11-18 06:29:34')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'verybadbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "login" = 'verybadbob' WHERE "id" = 1000004[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'verybadbob' AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'bob' AND "users".id <> 1000001) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'bob@mcbob.com' AND "users".id <> 1000001) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "hashed_password" = '0a53fee35431b0a01bdce15983e9a90668ad3c96', "updated_at" = '2008-11-18 06:29:34' WHERE "id" = 1000001[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonexistingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonexistingbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('1000', '2008-11-18 06:29:34', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob', 'nonexistingbob@mcbob.com', '2008-11-18 06:29:34')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'x') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'hugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhugebobhug') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = '') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'okbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'okbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('1YcT0DxExp', '2008-11-18 06:37:51', '5e4ddbf774a64afecb00a4fe3a75125dbaba7488', 'okbob', 'okbob@mcbob.com', '2008-11-18 06:37:51')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email IS NULL AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'notavalidemail' AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'okbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'validbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "email" = 'validbob@mcbob.com', "updated_at" = '2008-11-18 06:37:51' WHERE "id" = 1000004[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'existingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email IS NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonexistingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonexistingbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('xWS41cUDiE', '2008-11-18 06:37:51', '4b882712e0c17ac33aaca572a983c862f5712873', 'nonexistingbob', 'nonexistingbob@mcbob.com', '2008-11-18 06:37:51')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'nonexistingbob') LIMIT 1[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'newbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'newbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('nWUbM0ezY1', '2008-11-18 06:37:51', 'd549c32c034c137da5875d9558c2fe4faa547318', 'newbob', 'newbob@mcbob.com', '2008-11-18 06:37:51')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'newbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('RvnGx1J4A6', '2008-11-18 06:37:51', 'dc96a9bac4329a47354bd71bd683a28351d9f917', 'nonbob', 'nonbob@mcbob.com', '2008-11-18 06:37:51')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'longbob' AND "users".id <> 1000003) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'lbob@mcbob.com' AND "users".id <> 1000003) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE "users" SET "hashed_password" = '078cf6ae2de80ed6c004c8c8576a5572e077a52c', "updated_at" = '2008-11-18 06:37:51' WHERE "id" = 1000003[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'longbob' AND "users".id <> 1000003) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'lbob@mcbob.com' AND "users".id <> 1000003) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "hashed_password" = '00728d3362c26746ec25963f71be022b152237a9' WHERE "id" = 1000003[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM "users" WHERE (login = 'longbob') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'badbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.016000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('5LheazpAp2', '2008-11-18 06:37:51', '1dfe218ab3e8491680ea1f169e34b37fd0154943', 'badbob', 'badbob@mcbob.com', '2008-11-18 06:37:51')[0m
+WARNING: Can't mass-assign these protected attributes: salt, id
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'verybadbob' AND "users".id <> 1000004) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "login" = 'verybadbob', "updated_at" = '2008-11-18 06:37:51' WHERE "id" = 1000004[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'verybadbob' AND "users".id <> 1000004) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'badbob@mcbob.com' AND "users".id <> 1000004) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'bob') LIMIT 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login = 'bob' AND "users".id <> 1000001) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email = 'bob@mcbob.com' AND "users".id <> 1000001) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE "users" SET "hashed_password" = '130c744f1340522c41ed10ae26ce933bc9da9ef0', "updated_at" = '2008-11-18 06:37:51' WHERE "id" = 1000001[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT "login" FROM "users" WHERE ("users".login = 'nonexistingbob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT "email" FROM "users" WHERE ("users".email = 'nonexistingbob@mcbob.com') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO "users" ("salt", "updated_at", "hashed_password", "login", "email", "created_at") VALUES('1000', '2008-11-18 06:37:51', 'b1d27036d59f9499d403f90e0bcf43281adaa844', 'nonexistingbob', 'nonexistingbob@mcbob.com', '2008-11-18 06:37:51')[0m
