@@ -67,6 +67,9 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
   # Sass CSS Stylesheet output format. options(:nested, :expanded, :compact, :compressed)
   
+  # AuthLogic Gem
+  config.gem "authlogic"
+  
 end
 # These defaults are used in GeoKit::Mappable.distance_to and in acts_as_mappable
 GeoKit::default_units = :miles
