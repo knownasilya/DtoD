@@ -9,12 +9,12 @@
 
 %table#events
   -for event in @events
-    %tr{:class => cycle("even", "odd")}        
+    %tr{:class => cycle("even ", "odd ") + if_old(event.event_date)}        
       %td.name= h event.name
       %td.etype= h event.event_type
-      %td.edate= h(format_date(event.event_date))
+      %td.edate= h format_date(event.event_date)
       -#%td= h event.description
-      -#%td= h event.location
+      -#%td= h if_old(event.event_date)
       %td= link_to image_tag("map.png", :border=>0), :controller => "events", :action => "map", :id => event
       %td= link_to image_tag("show.png", :border=>0), event, :title => "Show"
       %td= link_to image_tag("edit.png", :border=>0), edit_event_path(event), :title => "Edit"

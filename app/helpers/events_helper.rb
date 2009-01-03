@@ -14,5 +14,15 @@ module EventsHelper
   def draw_map(map, width, height)
     return map.to_html, map.div(:width => width, :height => height)     
   end
+	
+	def if_old(date)
+		unless date.nil?
+			if date < Date.today
+				return :expired.to_s
+			else
+				return :fresh.to_s
+			end
+		end
+	end
    
 end

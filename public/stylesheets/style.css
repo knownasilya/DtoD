@@ -23,22 +23,30 @@ a:hover {
   text-decoration: underline; }
 
 #events {
-  margin-left: 20px; }
-  #events .name {
-    text-decoration: underline;
+  margin-left: 20px; }	
+  #events .fresh .name {    
     font-family: Verdana;
-    font-size: 12px; }
-  #events .etype {
+    font-size: 12px;
+		text-decoration: underline;		}
+  #events .fresh .etype {
     font-family: Verdana;
     font-size: 10px;
     color: #13A7C1; }
-  #events .edate {
+  #events .fresh .edate {
     font-family: Verdana;
     font-size: 10px;
     color: #000; }
   #events td {
     padding-bottom: 1px;
     border: 0; }
+	#events .expired .name, .expired .etype,.expired  .edate {
+		color:#afafaf;
+		text-decoration: line-through;
+		font-family: Verdana;
+		font-size: 10px; }	
+	#events .expired .name {
+		font-size: 12px; }
+	
 
 h1 {
   font-family: verdana;
@@ -63,6 +71,8 @@ h1 {
 
 .odd {
   background-color: #fff; }
+	
+
 
 .map {
   margin-top: 5px;
