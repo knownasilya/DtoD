@@ -23,11 +23,11 @@
     %br/
     = f.text_field :event_type
 
-  %p
+  %p.date_select
     = f.label :event_date
     %br/
-    = f.text_field :event_date
-
+    = f.date_select(:event_date, :use_month_numbers => true, :order => [:month, :day, :year])
+		
   %p
     = f.submit "Update"
 
