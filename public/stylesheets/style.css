@@ -20,10 +20,13 @@ a:visited {
 
 a:hover {
   color: #000;
-  text-decoration: underline; }
-
+   }
+	
 #events {
-  margin-left: 20px; }	
+  margin-left: 20px; }
+	#events .expired a {
+		color: #afafaf;
+		text-decoration: line-through; }
   #events .fresh .name {    
     font-family: Verdana;
     font-size: 12px;
@@ -71,12 +74,16 @@ h1 {
 
 .odd {
   background-color: #fff; }
-	
-
 
 .map {
   margin-top: 5px;
   margin-left: 20px; }
+	
+.create_event {
+	font-weight:bold;
+	font-size: 1.1em;
+	margin-left:20%;
+}
 
 .date_select {
   margin: 0;
