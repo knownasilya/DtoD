@@ -1,25 +1,30 @@
 %p
   %b Name:
   =h @event.name
+  
+%p
+  %b Type:
+  =h @event.event_type
+  
+%p
+  %b Website:
+  =h @event.website
 
 %p
   %b Description:
   =h @event.description
 
-
 %p
   %b Location:
   =h @event.location
 
-
 %p
-  %b Type:
-  =h @event.event_type
-
-
-%p
-  %b Date:
+  %b Starts:
   =h @event.event_date
+  
+%p
+  %b Ends:
+  =h @event.end_date
 
 
 = link_to 'Edit', edit_event_path(@event)

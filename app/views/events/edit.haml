@@ -1,12 +1,27 @@
-%h1.title Editing Event
+%h1
+  =image_tag("date.png", :border=>0)
+  Editing
+  =@event.name
+  
+.seperator_more
 
--form_for(@event) do |f|
+-form_for(@event, :class => "edit_event") do |f|
   =f.error_messages
 
   %p
-    = f.label :name 
+    = f.label :title
     %br/
     = f.text_field :name
+    
+  %p
+    = f.label :category
+    %br/
+    = f.text_field :event_type
+
+  %p
+    = f.label :website
+    %br/    
+    = f.text_field :website   
 
   %p
     = f.label :description 
@@ -18,15 +33,20 @@
     %br/
     = f.text_field :location
 
-  %p
-    = f.label :event_type
-    %br/
-    = f.text_field :event_type
-
   %p.date_select
-    = f.label :event_date
+    = f.label :starts
     %br/
     = f.date_select(:event_date, :use_month_numbers => true, :order => [:month, :day, :year])
+    
+  %p.date_select
+    = f.label :ends
+    %br/
+    = f.date_select(:end_date, :use_month_numbers => true, :order => [:month, :day, :year])
+    
+  %p
+    = f.label :price
+    %br/
+    = f.text_field :price
 		
   %p
     = f.submit "Update"

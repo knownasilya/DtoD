@@ -27,27 +27,27 @@ a:hover {
 	#events .expired a {
 		color: #afafaf;
 		text-decoration: line-through; }
-  #events .fresh .name {    
+  #events .fresh .summary {    
     font-family: Verdana;
     font-size: 12px;
 		text-decoration: underline;		}
-  #events .fresh .etype {
+  #events .fresh .category {
     font-family: Verdana;
     font-size: 10px;
     color: #13A7C1; }
-  #events .fresh .edate {
+  #events .fresh .dtstart {
     font-family: Verdana;
     font-size: 10px;
     color: #000; }
   #events td {
     padding-bottom: 1px;
     border: 0; }
-	#events .expired .name, .expired .etype,.expired  .edate {
+	#events .expired .summary, .expired .category,.expired  .dtstart {
 		color:#afafaf;
 		text-decoration: line-through;
 		font-family: Verdana;
 		font-size: 10px; }	
-	#events .expired .name {
+	#events .expired .summary {
 		font-size: 12px; }
 	
 
@@ -61,7 +61,7 @@ h1 {
 
 .seperator_more {
   height: 3px;
-  width: 310px;
+  width: 450px;
   background-color: #998D81; }
 
 .seperator_less {
@@ -88,3 +88,22 @@ h1 {
 .date_select {
   margin: 0;
   padding: 0; }
+
+.new_event {
+  font-family: verdana;
+  font-size: 12px;
+}
+
+.edit_event {
+  font-family: verdana;
+  font-size: 12px;
+}
+
+.new_event input{
+  border: 1px solid #afafaf;
+  }
+  
+.edit_event input{
+  border: 1px solid #afafaf;
+  }
+  
