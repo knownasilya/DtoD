@@ -9,12 +9,21 @@
 
 %table#events
   -for event in @events
-    %tr{:class => "vevent " + if_old(event.event_date) + cycle(" even", " odd")}        
-      %td.summary= link_to truncate(event.name, :length => 30), event, :title => event.name, :class => "url"
+    %tr{:class => "vevent " + if_old(event.end_date) + cycle(" even", " odd")}        
+      %td.summary
+        = link_to truncate(event.name, :length => 30), event, :title => event.name, :class => "url"
+        - unless event.price == ""
+          %abbr{:title => "Price: #{event.price}" , :class => "price"}
+            = image_tag("money.png", :class => "image")
+        - unless event.website == ""
+          %abbr{:title => h("Website: " + event.website), :class => "url"}
+            = link_to image_tag("link.png", :class => "image"), event.website
       %td.category= h event.event_type
       %td.dtstart= h format_date(event.event_date)
       -#%td= h event.description
-      %td= link_to image_tag("map.png", :border=>0), {:controller => "events", :action => "map", :id => event}, :title => "Show #{truncate(event.name, :length => 15)} map"
-      %td= link_to image_tag("show.png", :border=>0), event, :title => "Show"
-      %td= link_to image_tag("edit.png", :border=>0), edit_event_path(event), :title => "Edit"
-      %td= link_to image_tag("delete.png", :border=>0), event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete"
+      %td= link_to image_tag("map.png", :border=>0), {:controller => "events", :action => "map", :id => event}, :title => "Show \'#{truncate(event.name, :length => 15)}\' map"
+      %td= link_to image_tag("show.png", :border=>0), event, :title => "Show \'#{truncate(event.name, :length => 15)}\'"
+      %td= link_to image_tag("edit.png", :border=>0), edit_event_path(event), :title => "Edit \'#{truncate(event.name, :length => 15)}\'"
+      %td= link_to image_tag("delete.png", :border=>0), event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete \'#{truncate(event.name, :length => 15)}\'"
+
+.seperator_more

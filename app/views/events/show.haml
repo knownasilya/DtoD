@@ -1,30 +1,52 @@
-%p
-  %b Name:
-  =h @event.name
+%h1
+  =image_tag("date.png", :border=>0)
+  Showing
+  #event_title= "\'" + @event.name + "\'"
   
-%p
-  %b Type:
-  =h @event.event_type
-  
-%p
-  %b Website:
-  =h @event.website
+.seperator_more
 
-%p
-  %b Description:
-  =h @event.description
+%div.vevent
+  %p
+    %b Name:
+    %span.summary
+      =h @event.name
+    
+  %p
+    %b Type:
+    %span.category
+      =h @event.event_type
+    
+  %p
+    %b Website:
+    %span.url
+      =h @event.website
 
-%p
-  %b Location:
-  =h @event.location
+  %p
+    %b Description:
+    %span.description
+      =h @event.description
 
-%p
-  %b Starts:
-  =h @event.event_date
-  
-%p
-  %b Ends:
-  =h @event.end_date
+  %p
+    %b Location:
+    %span.location
+      =h @event.location
+
+  %p
+    %b Starts:
+    %span.dtstart
+      =h @event.event_date
+    
+  %p
+    %b Ends:
+    %span.dtend
+      =h @event.end_date
+      
+  - unless @event.price == ""
+    %p
+      %b Price:
+      %span.price
+        =h @event.price
+
 
 
 = link_to 'Edit', edit_event_path(@event)
