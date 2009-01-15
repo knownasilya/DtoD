@@ -1,7 +1,30 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
 body {
-  background-color: #fff;
-  padding: 5px;
-  margin: 0; }
+	line-height: 1;
+	color: black;
+	background: white;
+}
 
 body p ol ul td {
   font-family: verdana, sans-serif;
@@ -50,10 +73,24 @@ a:hover {
 	#events .expired .summary a{
 		font-size: 12px; }
 
+    
+#events p {
+  margin: 2px;
+}
+
 #event_title {
   font-style: italic;
-  display: inline;
 }
+
+#event_controls {  
+  font-size:0.8em;
+  float:right;
+  margin-right:10px;
+  }
+  
+#event_header {
+  clear:both;
+  font-size: 18px;}
 	
 abbr {
   border-bottom: 0px;
@@ -66,17 +103,31 @@ img.image {
 
 
 h1 {
-  font-family: verdana;
-  font-size: 18px;
+  font-family: verdana;  
   font-style: normal;
+  font-size: 18px;
   color: #55412D;
   line-height: 16px;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+  display:inline;
+  }
+  
+h1.edit, h1.show, h1.new {
+  font-family: verdana;  
+  font-style: normal;
+  font-size: 18px;
+  color: #55412D;
+  line-height: 16px;
+  margin-bottom: 4px;
+  display:inline;
+  float:left;
+  }
 
 .seperator_more {
   height: 3px;
-  width: 480px;
-  background-color: #998D81; }
+  width: 99%;
+  background-color: #998D81; 
+}
 
 .seperator_less {
   height: 3px;
@@ -131,3 +182,37 @@ h1 {
   border: 1px solid #afafaf;
   }
   
+.header {
+  height: 50px;
+  background-color: #333;
+  margin:0 0 10px 0;
+  padding:15px 10px 0 0;
+  text-align:right;
+}
+
+.header a {
+  color: #fff;}
+
+span.login {
+  color: #fff; 
+}
+
+div.container {
+  margin-left: 10px;
+}
+
+#statment {
+  color: #ccc;
+  display:block;}
+
+#login_container {
+
+  }
+  
+#vevent p{
+  padding-bottom:8px;  
+}
+
+#vevent {
+  padding-top:10px;}
+

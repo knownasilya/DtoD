@@ -1,11 +1,18 @@
-%h1
-  =image_tag("date.png", :border=>0)
-  Showing
-  #event_title= "\'" + @event.name + "\'"
+#event_header
+  %h1.show
+    =image_tag("date.png", :border=>0)
+    Showing
+    %span#event_title
+      = "\'" + @event.name + "\'"
+  %span#event_controls    
+    = link_to image_tag("arrow_left.png", :border=>0) + "Back", events_path
+    = link_to image_tag("edit.png", :border=>0) + "Edit", edit_event_path(@event), :title => "Edit \'#{truncate(@event.name, :length => 15)}\'"
+    = link_to image_tag("delete.png", :border=>0) + "Delete", @event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete \'#{truncate(@event.name, :length => 15)}\'"
+  = "&nbsp;"
   
 .seperator_more
 
-%div.vevent
+%div#vevent
   %p
     %b Name:
     %span.summary
@@ -41,14 +48,31 @@
     %span.dtend
       =h @event.end_date
       
-  - unless @event.price == ""
+  -unless @event.price.blank?
     %p
       %b Price:
       %span.price
         =h @event.price
+        
+  -unless @event.user_id.nil?
+    %p
+      %b Created By:
+      %span.created_by
+        =@event.user.login
+  
+  -if @event.user.admin == true
+    %p
+      %b Admin?:
+      %span.admin
+        = current_user.admin
+    
+.map
+  =draw_map @map, 500, 300
 
 
 
-= link_to 'Edit', edit_event_path(@event)
-|
-= link_to 'Back', events_path
+
+
+
+
+

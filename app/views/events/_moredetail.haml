@@ -23,7 +23,13 @@
       -#%td= h event.description
       %td= link_to image_tag("map.png", :border=>0), {:controller => "events", :action => "map", :id => event}, :title => "Show \'#{truncate(event.name, :length => 15)}\' map"
       %td= link_to image_tag("show.png", :border=>0), event, :title => "Show \'#{truncate(event.name, :length => 15)}\'"
-      %td= link_to image_tag("edit.png", :border=>0), edit_event_path(event), :title => "Edit \'#{truncate(event.name, :length => 15)}\'"
-      %td= link_to image_tag("delete.png", :border=>0), event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete \'#{truncate(event.name, :length => 15)}\'"
+      -if logged_in?
+        -if user_has_permission?(event)
+          %td
+            = link_to image_tag("edit.png", :border=>0), edit_event_path(event), :title => "Edit \'#{truncate(event.name, :length => 15)}\'"
+          
+        -if current_user.id == event.user_id || is_admin? 
+          %td
+            = link_to image_tag("delete.png", :border=>0), event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete \'#{truncate(event.name, :length => 15)}\'"
 
 .seperator_more

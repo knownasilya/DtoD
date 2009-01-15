@@ -1,57 +1,60 @@
-%h1
-  =image_tag("date.png", :border=>0)
-  Editing
-  #event_title= "\'" + @event.name + "\'"
+#event_header
+  %h1.edit
+    =image_tag("date.png", :border=>0)
+    Editing
+    %span#event_title
+      = "\'" + @event.name + "\'"
+  %span#event_controls    
+    = link_to image_tag("arrow_left.png", :border=>0) + "Back", events_path
+    = link_to image_tag("show.png", :border=>0) + "Show", @event, :title => "Show \'#{truncate(@event.name, :length => 15)}\'"
+    = link_to image_tag("delete.png", :border=>0) + "Delete", @event, :confirm => 'Are you sure?', :method => :delete, :title => "Delete \'#{truncate(@event.name, :length => 15)}\'"
+  = "&nbsp;"
   
 .seperator_more
 
--form_for(@event, :class => "edit_event") do |f|
+#events
+  -form_for(@event, :class => "edit_event") do |f|
   =f.error_messages
 
-  %p
-    = f.label :title
-    %br/
-    = f.text_field :name
-    
-  %p
-    = f.label :category
-    %br/
-    = f.text_field :event_type
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :name
+      
+    %p
+      = f.label :category
+      %br/
+      = f.text_field :event_type
 
-  %p
-    = f.label :website
-    %br/    
-    = f.text_field :website   
+    %p
+      = f.label :website
+      %br/    
+      = f.text_field :website   
 
-  %p
-    = f.label :description 
-    %br/
-    = f.text_area :description
+    %p
+      = f.label :description 
+      %br/
+      = f.text_area :description
 
-  %p
-    = f.label :location
-    %br/
-    = f.text_field :location
+    %p
+      = f.label :location
+      %br/
+      = f.text_field :location
 
-  %p.date_select
-    = f.label :starts
-    %br/
-    = f.date_select(:event_date, :use_month_numbers => true, :order => [:month, :day, :year])
-    
-  %p.date_select
-    = f.label :ends
-    %br/
-    = f.date_select(:end_date, :use_month_numbers => true, :order => [:month, :day, :year])
-    
-  %p
-    = f.label :price
-    %br/
-    = f.text_field :price
-		
-  %p
-    = f.submit "Update"
-
-
-= link_to 'Show', @event 
-|
-= link_to 'Back', events_path
+    %p.date_select
+      = f.label :starts
+      %br/
+      = f.date_select(:event_date, :use_month_numbers => true, :order => [:month, :day, :year])
+      
+    %p.date_select
+      = f.label :ends
+      %br/
+      = f.date_select(:end_date, :use_month_numbers => true, :order => [:month, :day, :year])
+      
+    %p
+      = f.label :price
+      %br/
+      = f.text_field :price
+      
+    %p
+      = f.submit "Update"

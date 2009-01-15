@@ -1,9 +1,13 @@
 class EventsController < ApplicationController  
   include GeoKit::Geocoders
   
+  before_filter :login_required, :except => [:index, :show, :map]
+  before_filter :user_has_permissions, :except => [:index, :show]
+
+  
   # GET /events
   # GET /events.xml
-  def index
+  def index    
     @events = Event.find(:all)  
    
     respond_to do |format|
@@ -16,6 +20,7 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
+    map
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,14 +40,16 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-    @event = Event.find(params[:id])
+  def edit 
+    authorized?
+    @event = Event.find(params[:id])    
   end
 
   # POST /events
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
+    @event.user_id = current_user.id
 
     respond_to do |format|
       if @event.save
@@ -59,7 +66,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id])    
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
@@ -85,7 +92,7 @@ class EventsController < ApplicationController
     end
   end
   
-  def map     
+  def map
     @event = Event.find(params[:id]) 
     
     #YM4R_GM Initialization
@@ -95,11 +102,26 @@ class EventsController < ApplicationController
     @map = GMap.new("map_div_id")  
     @map.control_init(:large_map => true, :map_type => true)  
     @map.center_zoom_init([lat, lng], 10)  
-    @map.overlay_init(@marker)  
-    
-    respond_to do |format|
-      format.html # map.html.erb
-      format.xml  { render :xml => @event }
+    @map.overlay_init(@marker)
+  end
+  
+private
+  
+  def user_has_permissions
+    begin
+      @event = Event.find(params[:id]) # throws exception -> rescue if id is nil/blank
+      current_user == @event.user || is_admin? || access_denied # returns true or false
+    rescue
+      is_admin? || logged_in? || access_denied # returns true or false
+    end
+  end
+
+  
+  def is_admin?
+    if logged_in? 
+      current_user.admin == true
+    else
+      false
     end
   end
 end

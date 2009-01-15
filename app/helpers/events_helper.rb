@@ -10,10 +10,6 @@ module EventsHelper
       end
     end
   end
-  
-  def draw_map(map, width, height)
-    return map.to_html, map.div(:width => width, :height => height)     
-  end
 	
 	def if_old(date)
 		unless date.nil?

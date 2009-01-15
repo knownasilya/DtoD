@@ -1,6 +1,10 @@
-%h1
-  =image_tag("date.png", :border=>0)
-  New Event
+#event_header
+  %h1.new
+    =image_tag("date.png", :border=>0)
+    New Event
+  %span#event_controls    
+    = link_to image_tag("arrow_left.png", :border=>0) + "Back", events_path
+  = "&nbsp;"
   
 .seperator_more
 
@@ -26,7 +30,7 @@
     = f.label :start_date
     %br/
     = f.date_select(:event_date, :use_month_numbers => true, :order => [:month, :day, :year])
-		
+    
   %p.date_select
     = f.label :end_date
     %br/
@@ -49,7 +53,3 @@
 
   %p
     = f.submit "Create"
-
-
-
-= link_to 'Back', events_path

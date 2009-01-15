@@ -1,0 +1,15 @@
+-if logged_in?
+  -flash[:notice] = "You are currently logged in! If you are not '#{current_user.login.capitalize}' than please logout!"
+
+-else
+  #login_container
+    - form_tag session_path do
+      %span.login  
+        = text_field_tag 'login', @login, :value => "username"
+        = password_field_tag 'password', nil, :value => "password"
+        
+        %abbr{:title => "Remember Me"}
+          = check_box_tag 'remember_me', '1', @remember_me
+
+        = submit_tag 'Log in'
+

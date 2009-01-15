@@ -65,7 +65,8 @@ module AuthenticatedSystem
       respond_to do |format|
         format.html do
           store_location
-          redirect_to new_session_path
+          flash[:permissions_error] = "You do not have permissions to access this item."
+          redirect_to :action => :index
         end
         # format.any doesn't work in rails version < http://dev.rubyonrails.org/changeset/8987
         # Add any other API formats here.  (Some browsers, notably IE6, send Accept: */* and trigger 
@@ -75,6 +76,7 @@ module AuthenticatedSystem
           request_http_basic_authentication 'Web Password'
         end
       end
+      
     end
 
     # Store the URI of the current request in the session.
@@ -110,7 +112,7 @@ module AuthenticatedSystem
 
     # Called from #current_user.  Now, attempt to login by basic authentication information.
     def login_from_basic_auth
-      authenticate_or_request_with_http_basic do |login, password| #authenticate_with_http_basic
+      authenticate_with_http_basic do |login, password|
         self.current_user = User.authenticate(login, password)
       end
     end
