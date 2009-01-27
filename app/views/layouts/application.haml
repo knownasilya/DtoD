@@ -11,20 +11,31 @@
     
   %body
     %div.header
-      %p{:style => "color: green"}
+      %p.notice
         = flash[:notice]
     
       -if logged_in?        
         #statment
-          Logged in as
-          = current_user.login.capitalize
-          |
-          = link_to "Logout", logout_path
+          #logout_tab
+            = link_to "Logout", logout_path          
+          %p
+            Welcome back
+            %span= link_to current_user.login.capitalize + "!", user_path(current_user)
+            .other_links
+              (                      
+              = link_to "View Profile", user_path(current_user), :class => "profile_link"
+              |              
+              = link_to "Settings", edit_user_path(current_user), :class => "settings_link "
+              )
+            
+          
       -else
         #statment
-          = link_to "Register", signup_path
-          |
-          = link_to "Login", login_path
+          #logout_tab
+            = link_to "Login", login_path
+          #register_tab
+            = link_to "Register", signup_path       
+          
         
     %div.container
       = yield
